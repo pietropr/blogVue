@@ -59,9 +59,11 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
-        $currentPost = Post::with('user')->where('slug', '=', $slug);
+        $currentPost = Post::where('slug', '=', $slug)->first();
+        $data['post'] = Post::where('slug', '=', $slug)->exclude('user_id')->first();
+        $data['user'] = User::select('name')->where('id', '=', $currentPost->user_id)->first();
 
-        return response()->json($currentPost);
+        return response()->json($data);
     }
 
     /**
