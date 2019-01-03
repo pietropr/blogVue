@@ -11,6 +11,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  #app {
+    container {
+      margin-top: 10vh;
+    }
+  }
 </style>
