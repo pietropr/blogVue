@@ -1,5 +1,5 @@
 <template>
-    <div id="single-post" class="container">
+    <div id="single-post">
         <div class="bloco-postagem">
             <conteudo-post-single :post="this.post"></conteudo-post-single>
         </div>
