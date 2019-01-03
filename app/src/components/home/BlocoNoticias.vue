@@ -1,14 +1,17 @@
 <template>
     <div id="bloco-posts">
         <article v-for="post in posts">
-            <img :src="post.img_destacada">
+            <img alt="Imagem" :src="post.img_destacada">
             <div class="info">
-                <p><span class="autor float-left">Publicado por: </span>{{post.user.name}}<span class="float-right">{{formatDate(post.created_at)}}</span></p>
+                <p><span class="autor float-left">Publicado por: <span class="autor-name">{{post.user.name}}</span></span><span class="float-right">{{formatDate(post.created_at)}}</span></p>
             </div>
-
-            <h3>{{post.titulo}}</h3>
-            <p>{{post.resumo}}</p>
-
+            <div class="titulo clearfix">
+                <h3>{{post.titulo}}</h3>
+                <p>{{post.resumo}}</p>
+            </div>
+            <div class="link">
+                <router-link :to="{name: 'singlePost', params: {slug: post.slug}}">Veja mais</router-link>
+            </div>
         </article>
     </div>
 </template>
@@ -47,6 +50,20 @@
         width: 50%;
         img {
             width: 100%;
+        }
+
+        h3 {
+            font-weight: 700;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+
+        .autor-name {
+            text-transform: capitalize;
+        }
+
+        .titulo {
+            clear: both;
         }
     }
 

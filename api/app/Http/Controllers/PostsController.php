@@ -57,9 +57,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $currentPost = Post::with('user')->find($id);
+        $currentPost = Post::with('user')->where('slug', '=', $slug);
 
         return response()->json($currentPost);
     }
