@@ -1,4 +1,4 @@
-# redline
+# RedLine - Modelo de Blog
 
 > Blog em Vuejs
 
