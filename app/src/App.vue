@@ -13,7 +13,7 @@ export default {
 
 <style lang="scss">
   #app {
-    container {
+    .container {
       margin-top: 10vh;
     }
   }
