@@ -2,6 +2,7 @@
     <div class="postagem">
         <div class="imagem" :style="{ 'background-image' : 'url(\'' + this.post.post.img_destacada + '\')' }"></div>
         <div class="container">
+            <router-link :to="{name: 'Home'}">Voltar</router-link>
             <div class="header">
                 <h1 class="titulo">{{this.post.post.titulo}}</h1>
                 <div class="header-footer">
@@ -32,6 +33,9 @@
 </script>
 <style lang="scss">
     .postagem {
+        .container {
+            margin-top: 20px !important;
+        }
         .imagem {
             background-position: 50%;
             background-size: cover !important;
